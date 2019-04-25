@@ -2,8 +2,7 @@ package ua.baziaka.problems;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ExampleTest {
     @Test
@@ -19,5 +18,10 @@ public class ExampleTest {
     @Test
     public void testPassed() {
         assertTrue(true);
+    }
+    
+    @Test
+    public void assertEqualsDoesNotMatch() {
+        assertEquals(1,2);
     }
 }
