@@ -1,39 +1,31 @@
 package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(Parameterized.class)
 public class ZigZagConversion6Test {
 
     private ZigZagConversion6 toTestAlg;
-    private ZigZagConversionTestData testData;
 
-    public ZigZagConversion6Test(ZigZagConversionTestData testData) {
-        this.testData = testData;
-    }
-
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         toTestAlg = new ZigZagConversion6();
     }
 
-    @Test
-    public void testZigZagConversion() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void testZigZagConversion(ZigZagConversionTestData testData) {
         String actual = toTestAlg.convert(testData.input, testData.numRows);
         assertEquals(testData.output, actual);
     }
 
-    @Parameters
     public static List<ZigZagConversionTestData> testData() {
         return asList(
                 new ZigZagConversionTestData("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"),

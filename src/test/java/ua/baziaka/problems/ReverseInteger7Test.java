@@ -2,53 +2,34 @@ package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(Parameterized.class)
 public class ReverseInteger7Test {
 
-    private ReverseInteger7Data testData;
     private ReverseInteger7 reverseInteger7;
 
-    public ReverseInteger7Test(ReverseInteger7Data testData) {
-        this.testData = testData;
-    }
-
-    @Before
+    @BeforeEach
     public void init() {
         reverseInteger7 = new ReverseInteger7();
     }
 
-    @Test
-    public void reverseIntegerTest() {
-        Assert.assertNotNull(reverseInteger7);
-        long start = System.nanoTime();
-        int reverse = reverseInteger7.reverse(testData.input);
-        long end = System.nanoTime();
-        System.out.println("Standard: " + (end - start) / 1000);
-        Assert.assertEquals(testData.output, reverse);
-    }
-
-    @Test
-    public void fastReverseIntegerTest() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void fastReverseIntegerTest(ReverseInteger7Data testData) {
         long start = System.nanoTime();
         int reverse = reverseInteger7.reverse(testData.input);
         long end = System.nanoTime();
         System.out.println("Fast: " + (end - start) / 1000);
-        Assert.assertEquals(testData.output, reverse);
+        assertEquals(testData.output, reverse);
     }
 
-    @Parameters
     public static List<ReverseInteger7Data> testData() {
         return asList
                 (

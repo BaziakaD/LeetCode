@@ -2,38 +2,32 @@ package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(Parameterized.class)
+
 public class IntegerToRoman12Test {
 
     private IntegerToRoman12 integerToRoman12;
-    private IntegerToRoman12Data testData;
 
-    public IntegerToRoman12Test(IntegerToRoman12Data testData) {
-        this.testData = testData;
-    }
-
-    @Before
+    @BeforeEach
     public void init() {
         integerToRoman12 = new IntegerToRoman12();
     }
 
-    @Test
-    public void testIntegerToRomanTransform() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void testIntegerToRomanTransform(IntegerToRoman12Data testData) {
         String actual = integerToRoman12.intToRoman(testData.input);
         assertEquals(testData.output, actual);
     }
 
-    @Parameterized.Parameters
     public static List<IntegerToRoman12Data> testData() {
         return Arrays.asList(
                 new IntegerToRoman12Data(3, "III"),

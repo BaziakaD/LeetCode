@@ -1,39 +1,31 @@
 package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(Parameterized.class)
 public class LongestSubstringWithoutRepeatingCharacters3Test {
 
     private LongestSubstringWithoutRepeatingCharacters3 toTestAlg;
-    private LongestSubstringWithoutRepeatingCharactersTestData testData;
 
-    public LongestSubstringWithoutRepeatingCharacters3Test(LongestSubstringWithoutRepeatingCharactersTestData testData) {
-        this.testData = testData;
-    }
-
-    @Before
+    @BeforeEach
     public void setUp() {
         toTestAlg = new LongestSubstringWithoutRepeatingCharacters3();
     }
 
-    @Test
-    public void testAlg() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void testAlg(LongestSubstringWithoutRepeatingCharactersTestData testData) {
         int actual = toTestAlg.lengthOfLongestSubstring(testData.input);
         assertEquals(testData.length, actual);
     }
 
-    @Parameters
     public static List<LongestSubstringWithoutRepeatingCharactersTestData> testData() {
         return asList(
                 new LongestSubstringWithoutRepeatingCharactersTestData("abcabcbb", 3),

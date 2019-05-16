@@ -1,41 +1,32 @@
 package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Collections;
 import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@RunWith(Parameterized.class)
 public class LongestPalindromicSubstring5Test {
 
     private LongestPalindromicSubstring5 toTestAlg;
-    private LongestPalindromicSubstringTestData testData;
 
-    public LongestPalindromicSubstring5Test(LongestPalindromicSubstringTestData testData) {
-        this.testData = testData;
-    }
-
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         toTestAlg = new LongestPalindromicSubstring5();
     }
 
-    @Test
-    public void testLongestPalindromeFind() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void testLongestPalindromeFind(LongestPalindromicSubstringTestData testData) {
         String actual = toTestAlg.longestPalindrome(testData.input);
         assertTrue(testData.output.contains(actual));
     }
 
-    @Parameters
     public static List<LongestPalindromicSubstringTestData> testData() {
         return asList(
                 new LongestPalindromicSubstringTestData("babadada", singletonList("adada")),

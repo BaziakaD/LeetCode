@@ -2,11 +2,8 @@ package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,24 +11,19 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(Parameterized.class)
 public class AddTwoNumbers2Test {
 
-    private AddTwoNumbers2Data testData;
-
-    public AddTwoNumbers2Test(AddTwoNumbers2Data testData) {
-        this.testData = testData;
-    }
-
-    @Test
-    public void addTwoNumberTests() {
+    @ParameterizedTest
+    @MethodSource("testData")
+    public void addTwoNumberTests(AddTwoNumbers2Data testData) {
         AddTwoNumbers2 addTwoNumbers2 = new AddTwoNumbers2();
 
         AddTwoNumbers2.ListNode actual = addTwoNumbers2.addTwoNumbers(testData.left, testData.right);
         List<Integer> actualIntegers = convertListNodeToList(actual);
 
-        Assert.assertEquals(testData.expected, actualIntegers);
+        assertEquals(testData.expected, actualIntegers);
     }
 
     @AllArgsConstructor
@@ -42,7 +34,6 @@ public class AddTwoNumbers2Test {
         List<Integer> expected;
     }
 
-    @Parameters
     public static List<AddTwoNumbers2Data> testData() {
 
         return Arrays.asList(
