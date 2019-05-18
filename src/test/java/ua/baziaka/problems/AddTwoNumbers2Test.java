@@ -29,16 +29,6 @@ public class AddTwoNumbers2Test {
         assertEquals(testData.expected, actualIntegers);
     }
 
-    @Test
-    public void t() {
-        assertTrue(true);
-    }
-
-    @Test
-    public void t2() {
-        assertTrue(false);
-    }
-
     @AllArgsConstructor
     @Getter
     private static class AddTwoNumbers2Data {

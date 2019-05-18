@@ -10,9 +10,9 @@ public class SimpleJunit4CodeTest {
         Assert.assertEquals(1, new SimpleJunit4Code().calc(1));
     }
 
-
-    @Test
-    public void failedTest() {
-        Assert.assertEquals(1, new SimpleJunit4Code().calc(1));
-    }
+//
+//    @Test
+//    public void failedTest() {
+//        Assert.assertEquals(1, new SimpleJunit4Code().calc(1));
+//    }
 }
