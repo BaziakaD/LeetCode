@@ -33,21 +33,7 @@ public class TriangleMathTest {
     public static Collection<Object[]> powTableValues() {
         return Arrays
                 .asList(new Object[][] {
-                        { 100, 100, 100, true },
-                        { 200, 100, 100, false },
-                        { 300, 400, 500, false },
-
-                        { Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, true },
-                        { 1, 1, 1, true },
-                        { 0, 0, 0, false },
-                        { -1, -1, -1, false },
-                        { Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, false },
-
-                        { -200, -200, -200, false },
-                        { -200, -400, -500, false },
-
-                        { 2, 2, -2, false },
-                        { 6, -8, -10, false }
+                        { 100, 100, 100, true }
 
                 });
     }
