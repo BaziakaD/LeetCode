@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import ua.epam.rd.javatester.TestMark;
 
 @RunWith(value = Parameterized.class)
 public class TriangleMathTest {

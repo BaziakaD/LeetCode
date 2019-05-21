@@ -23,7 +23,6 @@ public class RomanToInteger13Test {
 
     @ParameterizedTest
     @MethodSource("testData")
-    @TestMark(5)
     public void testRomanToIntegerConvertation(RomanToInteger13Data data) {
         int actual = romanToInteger.romanToInt(data.input);
         Assertions.assertEquals(data.output, actual);
@@ -31,7 +30,7 @@ public class RomanToInteger13Test {
 
     static Stream<RomanToInteger13Data> testData() {
         return Stream.of(
-                new RomanToInteger13Data("IV", 5),
+                new RomanToInteger13Data("IV", 4),
                 new RomanToInteger13Data("III", 3)
         );
     }
