@@ -3,8 +3,7 @@ package ua.baziaka.problems;
 import org.junit.jupiter.api.Test;
 import ua.epam.rd.javatester.TestMark;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 class NotImplementedTaskTest {
 
@@ -23,6 +22,6 @@ class NotImplementedTaskTest {
     @Test
     @TestMark(5)
     public void failedTest() {
-        fail();
+        assertEquals(1, 2);
     }
 }
