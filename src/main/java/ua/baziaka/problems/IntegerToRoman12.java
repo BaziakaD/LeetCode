@@ -1,5 +1,6 @@
 package ua.baziaka.problems;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class IntegerToRoman12 {
