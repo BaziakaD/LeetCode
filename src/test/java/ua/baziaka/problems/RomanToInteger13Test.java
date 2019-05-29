@@ -31,7 +31,7 @@ public class RomanToInteger13Test {
     static Stream<RomanToInteger13Data> testData() {
         return Stream.of(
                 new RomanToInteger13Data("IV", 4),
-                new RomanToInteger13Data("III", 3)
+                new RomanToInteger13Data("III", 3111)
         );
     }
 
