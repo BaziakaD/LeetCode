@@ -2,8 +2,6 @@ package ua.baziaka.problems;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -14,7 +12,6 @@ import java.util.List;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AddTwoNumbers2Test {
 

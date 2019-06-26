@@ -1,9 +1,6 @@
 package ua.baziaka.problems;
 
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -11,7 +8,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import ua.epam.rd.javatester.TestMark;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 @RunWith(value = Parameterized.class)
 public class TriangleMathTest {

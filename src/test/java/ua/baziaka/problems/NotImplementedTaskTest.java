@@ -1,9 +1,10 @@
 package ua.baziaka.problems;
 
 import org.junit.jupiter.api.Test;
-import ua.epam.rd.javatester.TestMark;
+import ua.epam.rd.javatester.domain.TestMark;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NotImplementedTaskTest {
 
