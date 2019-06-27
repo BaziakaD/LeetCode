@@ -1,6 +1,6 @@
 package ua.baziaka.problems;
 
-public class AddTwoNumbers2 {ththth
+public class AddTwoNumbers2 {
 
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
