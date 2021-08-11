@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import ua.epam.rd.javatester.domain.TestMark;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +17,6 @@ public class AddTwoNumbers2Test {
 
     @ParameterizedTest
     @MethodSource("testData")
-    @TestMark(5)
     public void addTwoNumberTests(AddTwoNumbers2Data testData) {
         AddTwoNumbers2 addTwoNumbers2 = new AddTwoNumbers2();
 

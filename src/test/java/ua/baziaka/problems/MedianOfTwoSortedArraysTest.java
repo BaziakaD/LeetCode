@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import ua.epam.rd.javatester.domain.TestMark;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +21,6 @@ public class MedianOfTwoSortedArraysTest {
 
     @ParameterizedTest
     @MethodSource("testData")
-    @TestMark(10)
     public void testMedianOfTwoSortedArrays(MedianOfTwoSortedArraysTestData testData) {
         double actual = toTestAlg.findMedianSortedArrays(testData.nums1, testData.nums2);
         assertEquals(testData.output, actual);
